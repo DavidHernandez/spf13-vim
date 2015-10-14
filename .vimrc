@@ -111,6 +111,7 @@
     set iskeyword-=.                    " '.' is an end of word designator
     set iskeyword-=#                    " '#' is an end of word designator
     set iskeyword-=-                    " '-' is an end of word designator
+    set relativenumber                  " Instead of showing the row number, shows only the current row plus the relative numbers
 
     " Instead of reverting the cursor to the last position in the buffer, we
     " set it to the first line when editing a git commit message
@@ -213,11 +214,19 @@
 
 " }
 
+" Syntax Highlighting {
+
+    au BufRead,BufNewFile *.inc set filetype=php
+    au BufRead,BufNewFile *.install set filetype=php
+    au BufRead,BufNewFile *.module set filetype=php
+
+" }
+
 " Formatting {
 
     set nowrap                      " Do not wrap long lines
     set autoindent                  " Indent at the same level of the previous line
-    set shiftwidth=4                " Use indents of 4 spaces
+    set shiftwidth=2                " Use indents of 4 spaces
     set expandtab                   " Tabs are spaces, not tabs
     set tabstop=4                   " An indentation every four columns
     set softtabstop=4               " Let backspace delete indent
